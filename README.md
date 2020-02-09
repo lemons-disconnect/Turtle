@@ -38,6 +38,6 @@ To select a target from the list of clients:
 
 ## Client
 
-In **client.py**, first change the IP address to that of the server and then run on target machine. If client does not have a compatible version of Python installed, you can create an executable by building from the source using **setup.py**.
+In **client.py**, first insert a link to the file containing your servers address (I made this for ngrokS) and then run on target machine. If client does not have a compatible version of Python installed, you can create an executable by building from the source using **setup.py**.
 
 `python setup.py build`
