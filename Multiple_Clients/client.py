@@ -10,9 +10,21 @@ class Client(object):
 
     def __init__(self):
         # self.serverHost = '192.168.1.9'
-        self.serverHost = '192.168.0.5'
-        self.serverPort = 9999
         self.socket = None
+
+    def get_listen(self):
+        list = os.listdir()
+        listener = "listener"
+        if listener in list:
+            os.system("sudo rm listener")
+            list = ""
+        dl('insert you link here', 'listener')
+        f = open("listener", "r+")
+        add = f.read()
+        addr = add.split(':')
+        self.serverHost = addr[0]
+        self.serverPort = int(addr[1])
+        f.close()
 
     def register_signal_handler(self):
         signal.signal(signal.SIGINT, self.quit_gracefully)
